@@ -15,7 +15,7 @@ import numpy as np
 from gerber2ems.constants import BASE_DIR, SIMULATION_DIR, GEOMETRY_DIR, RESULTS_DIR
 from gerber2ems.simulation import Simulation
 from gerber2ems.postprocess import Postprocesor
-from gerber2ems.config import Config
+from gerber2ems.config import Config, PortConfig
 import gerber2ems.importer as importer
 
 logger = logging.getLogger(__name__)
@@ -66,6 +66,14 @@ def add_ports(sim: Simulation, excited_port_number: Optional[int] = None) -> Non
 
     for index, port_config in enumerate(Config.get().ports):
         sim.add_msl_port(port_config, index, index == excited_port_number)
+
+    # for kicks, let's add a resistor(?)
+    cfg = PortConfig()
+    cfg.direction = 0
+    cfg.position = [3.286,-8.287]
+    cfg.impedance = 50 # for fun
+    sim.add_resistive_port(cfg)
+    
 
 
 def add_virtual_ports(sim: Simulation) -> None:

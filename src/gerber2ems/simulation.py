@@ -344,6 +344,11 @@ class Simulation:
         for via in vias:
             self.add_via(via[0], via[1], via[2])
 
+        
+        # test add cap
+        
+
+
     def add_via(self, x_pos, y_pos, diameter):
         """Add via at specified position with specified diameter."""
         thickness = sum(layer.thickness for layer in Config.get().get_substrates())

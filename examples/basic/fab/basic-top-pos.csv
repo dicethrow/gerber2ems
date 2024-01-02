@@ -2,3 +2,5 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "SP1","Simulation_Port","Simulation_Port",3.000000,11.750000,180.000000,top
 "SP2","Simulation_Port","Simulation_Port",7.000000,2.250000,0.000000,top
 "SP3","Simulation_Port","Simulation_Port",6.500000,11.750000,180.000000,top
+"Board_0-C105","0.1u 10% 25v X7R 0402","Z_0402_1005Metric",3.286,-8.287,180.000000,top
+"Board_0-C105","0.1u 10% 25v X7R 0402","Z_0402_1005Metric",3.286,-8.287,180.000000,bottom

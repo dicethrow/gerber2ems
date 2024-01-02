@@ -276,3 +276,8 @@ def get_ports_from_file(filename: str) -> List[Tuple[int, Tuple[float, float], f
                 logging.debug("Found port #%i position in pos file", number)
 
     return ports
+
+# def get_lumpedElements_from_file(filename: str):
+#     """Parse pnp CSV file and return all lumped elements in format: 
+
+#     """
