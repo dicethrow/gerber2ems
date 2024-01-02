@@ -277,6 +277,7 @@ class Simulation:
             "z",
             excite=1 if excite else 0,
             priority=100,
+            # edges2grid="xy" # copied from openems simplepatchantenna demo
         )
         self.ports.append(port)
 

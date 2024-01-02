@@ -68,11 +68,24 @@ def add_ports(sim: Simulation, excited_port_number: Optional[int] = None) -> Non
         sim.add_msl_port(port_config, index, index == excited_port_number)
 
     # for kicks, let's add a resistor(?)
-    cfg = PortConfig()
-    cfg.direction = 0
-    cfg.position = [3.286,-8.287]
-    cfg.impedance = 50 # for fun
-    sim.add_resistive_port(cfg)
+    R_center = [4.280, 8.320] # mm
+    w_padctopadc = 1 # mm
+    h_pad = 0.6 # mm
+
+    port = PortConfig({
+        "name" : "testR",
+        "width" : w_padctopadc / 1000 / 1e-6,
+        "length" : h_pad / 1000 / 1e-6,
+        "impedance" : 51,
+        "layer" : 0,
+        "plane" : 1
+    })
+    port.position = [
+            R_center[0] / 1000 / 1e-6,
+            R_center[1] / 1000 / 1e-6
+        ]
+    port.direction = 0 # is this LR or TD? assume LR
+    sim.add_resistive_port(port)
     
 
 
